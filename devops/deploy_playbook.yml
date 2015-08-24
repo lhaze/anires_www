@@ -1,0 +1,10 @@
+- hosts: web
+  user: vagrant
+  sudo: yes
+  sudo_user: vagrant
+  roles:
+
+  tasks:
+
+  - name: switch to production settings
+    lineinfile: dest=roapp/manage.py regexp="^os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.dev')" line="os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.prod')"

@@ -1,0 +1,22 @@
+# Python temp
+*.py[cod]
+*.egg-info
+__pycache__
+.cache
+.coverage
+.coverage-report
+
+# project management
+.vagrant
+.vault_pass.txt
+anires/settings/local.py
+/Vagrantfile.local
+
+# IDEs
+*.swp
+*~
+.idea
+*.bat
+
+# DB
+*.sqlite3

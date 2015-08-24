@@ -1,0 +1,12 @@
+Django>=1.8,<1.9
+psycopg2==2.6
+django-compressor>=1.4
+django-modelcluster>=0.4
+django-extensions==1.5.5
+wagtail>=0.8.7,<1.0
+django-taggit>=0.12.2
+django-libsass>=0.2
+libsass==0.8.2
+Pillow==2.8.1
+Hamlish-Jinja==0.3.2
+ipython==2.3.1
