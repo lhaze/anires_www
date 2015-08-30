@@ -1,5 +1,8 @@
+# Heroku (staging) requirements file
+# for dev ones, look at devops/requirements/python-dev.txt
 -r python.txt
 
 dj-database-url==0.3.0
 dj-static==0.0.6
 gunicorn==19.1.1
+
