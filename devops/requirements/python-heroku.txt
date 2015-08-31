@@ -1,5 +1,3 @@
-# Heroku (staging) requirements file
-# for dev ones, look at devops/requirements/python-dev.txt
 -r python.txt
 
 dj-database-url==0.3.0
