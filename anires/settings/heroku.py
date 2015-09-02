@@ -10,7 +10,7 @@ BASE_URL = 'http://localhost:8000'
 
 import dj_database_url
 DATABASES['default'] = dj_database_url.config()
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres@localhost:5432/anires')}
+# DATABASES = {'default': dj_database_url.config(default='postgres://postgres@localhost:5432/anires')}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

@@ -17,7 +17,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/vagrant/anires.db',
+        'NAME': '/home/vagrant/anires.sqlite3',
     }
 }
 
@@ -158,7 +158,8 @@ INSTALLED_APPS = (
     'wagtail.wagtailforms',
     'wagtail.wagtailsites',
 
-    'anires.demo',
+    'anires.core',
+    'anires.news',
 )
 
 EMAIL_SUBJECT_PREFIX = '[wagtaildemo] '
@@ -206,4 +207,5 @@ LOGGING = {
 
 # WAGTAIL SETTINGS
 
-WAGTAIL_SITE_NAME = 'wagtaildemo'
+WAGTAIL_SITE_NAME = 'anires'
+ENTRIES_PER_PAGE_COUNT = 10

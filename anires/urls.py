@@ -7,7 +7,7 @@ from wagtail.wagtailadmin import urls as wagtailadmin_urls
 from wagtail.wagtaildocs import urls as wagtaildocs_urls
 from wagtail.wagtailcore import urls as wagtail_urls
 
-from anires.demo import views
+from anires.core import views as core_views
 
 
 urlpatterns = [
@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
 
-    url(r'search/$', views.search, name='search'),
+    url(r'search/$', core_views.search, name='search'),
 
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's serving mechanism
@@ -31,5 +31,6 @@ if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += [
-        url(r'^favicon\.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'demo/images/favicon.ico'))
+        url(r'^favicon\.ico$',
+            RedirectView.as_view(url=settings.STATIC_URL + 'images/favicon.ico', permanent=True))
     ]

@@ -6,6 +6,9 @@ __pycache__
 .coverage
 .coverage-report
 
+# Djagno
+/static/
+
 # project management
 .vagrant
 .vault_pass.txt
@@ -20,3 +23,6 @@ anires/settings/local.py
 
 # DB
 *.sqlite3
+
+# temp
+anires/demo/
