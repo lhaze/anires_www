@@ -4,3 +4,4 @@ tree
 python-pip
 git
 ansible
+sqlite3

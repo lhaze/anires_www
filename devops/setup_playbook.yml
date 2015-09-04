@@ -26,6 +26,7 @@
         - htop
         - tree
         - vim
+        - sqlite3
 
     - name: change ownership of .virtualenvs
       file: path=/home/vagrant/.virtualenvs owner=vagrant group=vagrant recurse=yes

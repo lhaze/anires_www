@@ -1,5 +1,8 @@
 import os
 
+import dj_database_url
+
+
 APPLICATION_DIR = os.path.join(os.path.dirname(__file__),  '..')
 PROJECT_ROOT = os.path.join(APPLICATION_DIR,  '..')
 
@@ -14,12 +17,7 @@ ADMINS = (
 # as per https://docs.djangoproject.com/en/dev/topics/email/#email-backends
 EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/vagrant/anires.sqlite3',
-    }
-}
+DATABASES = {'default': dj_database_url.config(default='sqlite:////home/vagrant/anires.sqlite3')}
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
