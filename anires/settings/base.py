@@ -3,11 +3,16 @@ import os
 import dj_database_url
 
 
-APPLICATION_DIR = os.path.join(os.path.dirname(__file__),  '..')
-PROJECT_ROOT = os.path.join(APPLICATION_DIR,  '..')
+path = lambda *args: os.path.abspath(os.path.join(*args))
+env_var = lambda key, default='': os.environ.get(key, default)
+trueish = lambda value: bool(value) and str(value).lower() != 'false'
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+
+APPLICATION_DIR = path(os.path.dirname(__file__),  '..')
+PROJECT_ROOT = path(APPLICATION_DIR,  '..')
+
+DEBUG = trueish(env_var('DJANGO_DEBUG'))
+TEMPLATE_DEBUG = trueish(env_var('DJANGO_TEMPLATE_DEBUG', DEBUG))
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -54,40 +59,20 @@ USE_TZ = True
 
 DATE_FORMAT = 'j F Y'
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/media/'
-
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
+STATIC_ROOT = path(PROJECT_ROOT, 'collected_static') + '/'
 STATIC_URL = '/static/'
-
-# Additional locations of static files
-STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
-
-# List of finder classes that know how to find static files in
-# various locations.
+STATICFILES_DIRS = ()
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'compressor.finders.CompressorFinder',
 )
+COMPRESS_ENABLED = trueish(env_var('DJANGO_COMPRESS_ENABLED', not DEBUG))
+COMPRESS_OFFLINE = True
+
+MEDIA_ROOT = path(PROJECT_ROOT, 'media') + '/'
+MEDIA_URL = '/media/'
 
 # ** You would never normally put the SECRET_KEY in a public repository,
 # ** however this is a demo app so we're using the default settings.

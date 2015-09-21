@@ -11,3 +11,4 @@ libsass==0.8.2
 Pillow==2.8.1
 Hamlish-Jinja==0.3.2
 ipython==2.3.1
+whitenoise==2.0.4

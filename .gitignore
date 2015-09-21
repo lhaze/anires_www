@@ -7,7 +7,8 @@ __pycache__
 .coverage-report
 
 # Djagno
-/static/
+/collected_static/
+/media/
 
 # project management
 .vagrant
