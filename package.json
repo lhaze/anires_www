@@ -1,0 +1,23 @@
+{
+  "name": "anires_www",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-nodeunit": "0.4.1",
+    "grunt-contrib-uglify": "~0.7.0",
+    "grunt-flake8": "~0.1.3",
+    "grunt-sass": "~0.17.0",
+    "grunt-autoprefixer": "~2.2.0",
+    "grunt-contrib-cssmin": "~0.11.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-newer": "~1.1.0",
+    "time-grunt": "~1.0.0",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-django-manage": "~0.1.4",
+    "grunt-browserify": "~3.6.0",
+    "event": "~1.0.0",
+    "cookies-js": "~1.2.1",
+    "grunt-shell": "~1.1.2",
+    "jquery": "~2.1.4"
+  }
+}

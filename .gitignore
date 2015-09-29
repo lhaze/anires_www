@@ -1,4 +1,4 @@
-# Python temp
+# Python env
 *.py[cod]
 *.egg-info
 __pycache__
@@ -10,11 +10,14 @@ __pycache__
 /collected_static/
 /media/
 
+# node env
+/node_modules/
+
 # project management
 .vagrant
 .vault_pass.txt
 anires/settings/local.py
-/Vagrantfile.local
+Vagrantfile.local
 
 # IDEs
 *.swp
